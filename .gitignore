@@ -22,6 +22,14 @@
 
 # misc
 .DS_Store
+
+# source assets (copies live in public/images/)
+/1.png
+/2.png
+/3.jpeg
+/4.jpeg
+/5.jpeg
+/6.jpeg
 *.pem
 
 # debug
