@@ -14,14 +14,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://samsamson.co"),
-  title: "Sam Samson — GTM & RevOps",
+  title: "Sam Samson",
   description:
-    "Sam Samson builds automations, CRM workflows, and GTM systems. GTM & RevOps professional based in San Francisco, CA.",
+    "I build automations, CRM workflows, and GTM systems that turn messy processes into clean, scalable execution.",
   openGraph: {
-    title: "Sam Samson — GTM & RevOps",
+    title: "Sam Samson",
     description:
-      "Automations, CRM workflows, and GTM systems that turn messy processes into clean, scalable execution.",
+      "I build automations, CRM workflows, and GTM systems that turn messy processes into clean, scalable execution.",
+    siteName: "Sam Samson",
     type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sam Samson",
+    description:
+      "I build automations, CRM workflows, and GTM systems that turn messy processes into clean, scalable execution.",
   },
 };
 
