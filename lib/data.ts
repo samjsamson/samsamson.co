@@ -25,6 +25,18 @@ export const aboutParagraphs = [
 
 export const experience = [
   {
+    id: "bluebubbler",
+    company: "BlueBubbler",
+    role: "Founder",
+    period: "Jun 2025 — Present",
+    bullets: [
+      "Built BlueBubbler, a phone number validator that identifies which contacts use iPhone.",
+      "Helps sales teams send blue texts to boost reply rates and generate pipeline.",
+      "Built with Cursor, GitHub, and Vercel.",
+    ],
+    link: "https://www.bluebubbler.co/",
+  },
+  {
     id: "five9",
     company: "Five9",
     role: "Enterprise BDR",
@@ -37,16 +49,17 @@ export const experience = [
     link: null,
   },
   {
-    id: "bluebubbler",
-    company: "BlueBubbler",
-    role: "Founder",
-    period: "Jun 2025 — Present",
+    id: "flare",
+    company: "Flare",
+    role: "Revenue Operations",
+    period: "2020 — 2023",
     bullets: [
-      "Built BlueBubbler, a phone number validator that identifies which contacts use iPhone.",
-      "Helps sales teams send blue texts to boost reply rates and generate pipeline.",
-      "Built with Cursor, GitHub, and Vercel.",
+      "Built and scaled lead generation and routing workflows driving 80+ attorney placements per month.",
+      "Supported a sales team of 10 AEs.",
+      "Designed Salesforce dashboards and Tableau reports tracking pipeline, ROI, and campaign effectiveness.",
+      "Scraped, enriched, and maintained 100K+ prospect records.",
     ],
-    link: "https://www.bluebubbler.co/",
+    link: null,
   },
   {
     id: "moego",
@@ -68,19 +81,6 @@ export const experience = [
         alt: "MoeGo Closed Won Monthly Subscriptions chart",
       },
     ] as const,
-  },
-  {
-    id: "flare",
-    company: "Flare",
-    role: "Revenue Operations",
-    period: "2020 — 2023",
-    bullets: [
-      "Built and scaled lead generation and routing workflows driving 80+ attorney placements per month.",
-      "Supported a sales team of 10 AEs.",
-      "Designed Salesforce dashboards and Tableau reports tracking pipeline, ROI, and campaign effectiveness.",
-      "Scraped, enriched, and maintained 100K+ prospect records.",
-    ],
-    link: null,
   },
 ] as const;
 
@@ -104,12 +104,6 @@ export const projects = [
       "Built a GPT-based prospect ranking system that analyzes LinkedIn profiles and prioritizes leads by fit.",
   },
   {
-    id: "bdr-meeting",
-    title: "BDR Weekly Team Meeting Redesign",
-    description:
-      "Redesigned the BDR Weekly Team Meeting document into a cleaner, visual layout that improved accountability and visibility.",
-  },
-  {
     id: "phone-report",
     title: "Phone & Mobile Report Layout",
     description:
@@ -119,13 +113,13 @@ export const projects = [
     id: "phone-cleanup",
     title: "Salesforce Phone Number Cleanup",
     description:
-      "Removed (+1) from 500+ Salesforce phone numbers for faster dialing using SQL lookup and data import.",
+      "Removed (+1) from 10k+ Salesforce phone numbers for faster dialing using SQL lookup and data import.",
   },
   {
     id: "territory-reassignment",
     title: "Territory Account Reassignment",
     description:
-      "Reassigned 328 Mid-Atlantic Territory accounts with blank BDR fields, mapping ownership to BDRs using Salesforce Data Import Wizard.",
+      "Reassigned 300+ Mid-Atlantic Territory accounts with blank BDR fields, mapping ownership to BDRs using Salesforce Data Import Wizard.",
   },
   {
     id: "hammerspoon",
@@ -137,7 +131,7 @@ export const projects = [
     id: "bad-number",
     title: "Bad Number CRM Cleanup Proposal",
     description:
-      "Identified 570 wrong-number dials in March and proposed Salesforce automation to remove bad numbers from the CRM to reduce wasted dialing.",
+      "Identified 500+ wrong-number dials in March and proposed Salesforce automation to remove bad numbers from the CRM to reduce wasted dialing.",
   },
 ] as const;
 
@@ -152,7 +146,6 @@ export const skills = [
   "Apollo",
   "Outreach",
   "6sense",
-  "Salesforce Inspector Reloaded",
   "SOQL",
   "Cursor",
   "GitHub",
