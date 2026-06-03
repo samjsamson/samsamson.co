@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://samsamson.co"),
   title: "Sam Samson — GTM & RevOps",
   description:
     "Sam Samson builds automations, CRM workflows, and GTM systems. GTM & RevOps professional based in San Francisco, CA.",
