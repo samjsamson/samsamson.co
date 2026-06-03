@@ -9,7 +9,7 @@ export function Experience() {
   return (
     <section
       id="experience"
-      className="scroll-mt-24 px-6 py-24 lg:px-8 lg:py-32"
+      className="scroll-mt-24 border-t border-white/[0.06] px-6 pt-16 pb-24 lg:px-8 lg:pt-20 lg:pb-32"
     >
       <div className="mx-auto max-w-4xl">
         <SectionHeading label="Experience" />

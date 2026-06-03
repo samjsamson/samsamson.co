@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { aboutParagraphs, site } from "@/lib/data";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -12,24 +13,23 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+const description = aboutParagraphs[0];
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://samsamson.co"),
-  title: "Sam Samson",
-  description:
-    "I build automations, CRM workflows, and GTM systems that turn messy processes into clean, scalable execution.",
+  title: site.name,
+  description,
   openGraph: {
-    title: "Sam Samson",
-    description:
-      "I build automations, CRM workflows, and GTM systems that turn messy processes into clean, scalable execution.",
-    siteName: "Sam Samson",
+    title: site.name,
+    description,
+    siteName: site.name,
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sam Samson",
-    description:
-      "I build automations, CRM workflows, and GTM systems that turn messy processes into clean, scalable execution.",
+    title: site.name,
+    description,
   },
 };
 

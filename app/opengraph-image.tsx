@@ -1,5 +1,5 @@
 import { ImageResponse } from "next/og";
-import { site } from "@/lib/data";
+import { aboutParagraphs, site } from "@/lib/data";
 
 export const alt = site.name;
 export const size = { width: 1200, height: 630 };
@@ -24,7 +24,7 @@ export default function Image() {
           style={{
             color: "#71717a",
             fontSize: 24,
-            letterSpacing: "0.08em",
+            letterSpacing: "0.12em",
             textTransform: "uppercase",
           }}
         >
@@ -45,7 +45,7 @@ export default function Image() {
         <div
           style={{
             color: "#a1a1aa",
-            fontSize: 44,
+            fontSize: 40,
             marginTop: 16,
             fontWeight: 400,
           }}
@@ -55,13 +55,13 @@ export default function Image() {
         <div
           style={{
             color: "#d4d4d8",
-            fontSize: 30,
+            fontSize: 28,
             marginTop: 32,
             maxWidth: 920,
-            lineHeight: 1.4,
+            lineHeight: 1.45,
           }}
         >
-          {site.headline}
+          {aboutParagraphs[0]}
         </div>
       </div>
     ),

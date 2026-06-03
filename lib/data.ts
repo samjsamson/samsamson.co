@@ -1,9 +1,7 @@
 export const site = {
   name: "Sam Samson",
-  title: "GTM & RevOps",
+  title: "GTM & Revenue Operations",
   location: "San Francisco, CA",
-  headline:
-    "I build automations, CRM workflows, and GTM systems that turn messy processes into clean, scalable execution.",
   email: "samjsamson@icloud.com",
   linkedin: "https://www.linkedin.com/in/samjsamson/",
   github: "https://github.com/samjsamson",
@@ -20,9 +18,9 @@ export const navLinks = [
 ] as const;
 
 export const aboutParagraphs = [
-  "I've spent the last several years at the intersection of sales and operations in fast-moving tech startups, building a foundation that aligns naturally with modern RevOps. My focus is on systems, efficiency, and turning chaos into clean, scalable processes.",
-  "I build automations that eliminate repetitive manual work, create CRM dashboards that speed up execution, and develop enablement procedures that give teams the fastest path to results. Alongside my operations work, I've consistently carried a sales quota and driven strong outbound pipeline.",
-  "I specialize in turning messy, cross-functional processes into clean, automated systems. I bring strong technical fluency, a deep understanding of GTM workflows, and a bias toward building things that actually get used.",
+  "Sam is a Revenue Operations professional based in San Francisco. He specializes in Salesforce automation, outbound prospecting systems, and operational workflows that help revenue teams scale efficiently.",
+  "His experience spans sales, RevOps, and business development at Five9, Flare, and MoeGo, where he has built automations, reporting systems, lead routing processes, and AI-powered prospecting tools.",
+  "Outside of work, Sam builds software products, creates content, and explores cosmology and symbolic systems.",
 ] as const;
 
 export const experience = [
