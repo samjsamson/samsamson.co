@@ -6,12 +6,14 @@ export const site = {
     "I build automations, CRM workflows, and GTM systems that turn messy processes into clean, scalable execution.",
   email: "samjsamson@icloud.com",
   linkedin: "https://www.linkedin.com/in/samjsamson/",
+  github: "https://github.com/samjsamson",
 } as const;
 
 export const navLinks = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
   { href: "#projects", label: "Projects" },
+  { href: "#videos", label: "Videos" },
   { href: "#skills", label: "Skills" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
@@ -168,3 +170,20 @@ export const education = {
   school: "University of Oregon",
   degree: "B.S. Economics",
 } as const;
+
+export const videos = [
+  {
+    id: "ai-prospecting",
+    title: "AI-Powered Prospecting",
+    description:
+      "Leveraging AI to analyze LinkedIn profiles and identify high-fit prospects that closely match Five9's ideal customer profile, dramatically accelerating prospect research and saving several hours of manual work each week.",
+    src: "/videos/ai-prospecting.mp4",
+  },
+  {
+    id: "automated-crm-data-entry",
+    title: "Automated CRM Data Entry",
+    description:
+      "Using custom macro scripts to automate repetitive Salesforce tasks, reducing manual data entry and accelerating CRM workflow execution.",
+    src: "/videos/automated-crm-data-entry.mp4",
+  },
+] as const;

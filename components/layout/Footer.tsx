@@ -9,6 +9,14 @@ export function Footer() {
         </p>
         <div className="flex gap-6 text-sm text-zinc-500">
           <a
+            href={site.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="transition-colors hover:text-zinc-300"
+          >
+            GitHub
+          </a>
+          <a
             href={site.linkedin}
             target="_blank"
             rel="noopener noreferrer"

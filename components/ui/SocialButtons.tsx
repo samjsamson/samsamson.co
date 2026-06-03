@@ -1,4 +1,8 @@
+import Image from "next/image";
 import { site } from "@/lib/data";
+
+const iconButtonClass =
+  "flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-white/[0.06] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md transition-all hover:border-white/50 hover:bg-white/10";
 
 function LinkedInIcon() {
   return (
@@ -29,20 +33,35 @@ function EmailIcon() {
 
 export function SocialButtons({ className = "" }: { className?: string }) {
   return (
-    <div className={`flex items-center gap-4 ${className}`}>
+    <div className={`flex items-center gap-3 ${className}`}>
       <a
         href={site.linkedin}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="LinkedIn"
-        className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-white/[0.06] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md transition-all hover:border-white/50 hover:bg-white/10"
+        className={iconButtonClass}
       >
         <LinkedInIcon />
       </a>
       <a
+        href={site.github}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="GitHub"
+        className={iconButtonClass}
+      >
+        <Image
+          src="/icons/github.png"
+          alt=""
+          width={20}
+          height={20}
+          className="h-5 w-5 object-contain"
+        />
+      </a>
+      <a
         href={`mailto:${site.email}`}
         aria-label="Email"
-        className="flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-white/[0.06] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md transition-all hover:border-white/50 hover:bg-white/10"
+        className={iconButtonClass}
       >
         <EmailIcon />
       </a>

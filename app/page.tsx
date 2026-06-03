@@ -8,6 +8,7 @@ import { Experience } from "@/components/sections/Experience";
 import { FeaturedProjects } from "@/components/sections/FeaturedProjects";
 import { Hero } from "@/components/sections/Hero";
 import { Skills } from "@/components/sections/Skills";
+import { Videos } from "@/components/sections/Videos";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <About />
         <Experience />
         <FeaturedProjects />
+        <Videos />
         <Skills />
         <Education />
         <Contact />
