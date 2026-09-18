@@ -6,15 +6,7 @@ import { SocialButtons } from "@/components/ui/SocialButtons";
 import { navLinks } from "@/lib/data";
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -28,9 +20,7 @@ export function Header() {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 right-0 left-0 z-50 transition-all duration-300 ${
-        scrolled || menuOpen ? "glass-strong py-3" : "bg-transparent py-5"
-      }`}
+      className="fixed top-0 right-0 left-0 z-50 border-b border-white/[0.08] bg-black/90 py-3 backdrop-blur-xl"
     >
       <div className="relative mx-auto flex max-w-6xl items-center justify-end px-6 lg:justify-center lg:px-8">
         <button
