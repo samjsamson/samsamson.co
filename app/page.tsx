@@ -1,6 +1,7 @@
 import { Background } from "@/components/layout/Background";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
+import { BellhavenSpotlight } from "@/components/sections/BellhavenSpotlight";
 import { Contact } from "@/components/sections/Contact";
 import { Education } from "@/components/sections/Education";
 import { Experience } from "@/components/sections/Experience";
@@ -16,6 +17,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <BellhavenSpotlight />
         <Experience />
         <FeaturedProjects />
         <Videos />
