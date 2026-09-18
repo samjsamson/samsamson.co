@@ -84,6 +84,26 @@ export const experience = [
   },
 ] as const;
 
+export const featuredProject = {
+  label: "Featured build",
+  date: "September 2026",
+  title: "Bellhaven CRM Reconciliation",
+  description:
+    "Built an end-to-end Python pipeline that scrapes live facility data, reconciles it against CRM accounts, and proposes the correct update using normalized addresses, location signals, and fuzzy name matching.",
+  detail:
+    "The workflow handles field updates, re-parenting, change-of-ownership logic, duplicates, human approval in Streamlit, API write-back, and scheduled reruns.",
+  github: "https://github.com/samjsamson/bellhaven-assessment",
+  tags: ["Python", "REST APIs", "CRM Automation", "Streamlit", "GitHub Actions"],
+  pipeline: [
+    "Scrape current facility data",
+    "Fetch CRM accounts by API",
+    "Match and classify discrepancies",
+    "Review proposed changes",
+    "Write approved updates back",
+  ],
+  result: "41 CRM accounts reconciled with 0 unresolved proposals on the final rerun.",
+} as const;
+
 export const projects = [
   {
     id: "mass-lead-updater",
