@@ -7,6 +7,11 @@ import { site } from "@/lib/data";
 const iconButtonClass =
   "flex h-12 w-12 items-center justify-center rounded-full border border-white/30 bg-white/[0.06] text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.08)] backdrop-blur-md transition-all hover:border-white/50 hover:bg-white/10";
 
+const popoverClass =
+  "absolute top-full right-0 z-50 mt-2 whitespace-nowrap rounded-xl border border-white/15 bg-zinc-950/95 px-4 py-3 text-sm text-zinc-200 shadow-2xl shadow-black/40 backdrop-blur-xl";
+
+type Popover = "linkedin" | "github" | "email" | null;
+
 function LinkedInIcon() {
   return (
     <svg viewBox="0 0 24 24" fill="currentColor" className="h-5 w-5" aria-hidden>
@@ -35,24 +40,24 @@ function EmailIcon() {
 }
 
 export function SocialButtons({ className = "" }: { className?: string }) {
-  const [emailOpen, setEmailOpen] = useState(false);
-  const emailRef = useRef<HTMLDivElement>(null);
+  const [openPopover, setOpenPopover] = useState<Popover>(null);
+  const groupRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!emailOpen) return;
+    if (!openPopover) return;
 
     const onPointerDown = (event: PointerEvent) => {
       if (
-        emailRef.current &&
+        groupRef.current &&
         event.target instanceof Node &&
-        !emailRef.current.contains(event.target)
+        !groupRef.current.contains(event.target)
       ) {
-        setEmailOpen(false);
+        setOpenPopover(null);
       }
     };
 
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") setEmailOpen(false);
+      if (event.key === "Escape") setOpenPopover(null);
     };
 
     document.addEventListener("pointerdown", onPointerDown);
@@ -62,52 +67,74 @@ export function SocialButtons({ className = "" }: { className?: string }) {
       document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("keydown", onKeyDown);
     };
-  }, [emailOpen]);
+  }, [openPopover]);
+
+  const togglePopover = (popover: Exclude<Popover, null>) => {
+    setOpenPopover((current) => (current === popover ? null : popover));
+  };
 
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
-      <a
-        href={site.linkedin}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-        className={iconButtonClass}
-      >
-        <LinkedInIcon />
-      </a>
-      <a
-        href={site.github}
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub"
-        className={iconButtonClass}
-      >
-        <Image
-          src="/icons/github.png"
-          alt=""
-          width={20}
-          height={20}
-          className="h-5 w-5 object-contain invert"
-        />
-      </a>
-      <div ref={emailRef} className="relative">
+    <div ref={groupRef} className={`flex items-center gap-3 ${className}`}>
+      <div className="relative">
+        <button
+          type="button"
+          aria-label="Show LinkedIn URL"
+          aria-expanded={openPopover === "linkedin"}
+          aria-controls="linkedin-popover"
+          onClick={() => togglePopover("linkedin")}
+          className={iconButtonClass}
+        >
+          <LinkedInIcon />
+        </button>
+
+        {openPopover === "linkedin" && (
+          <div id="linkedin-popover" role="status" className={popoverClass}>
+            <span className="text-zinc-500">LinkedIn: </span>
+            <span>linkedin.com/in/samjsamson</span>
+          </div>
+        )}
+      </div>
+
+      <div className="relative">
+        <button
+          type="button"
+          aria-label="Show GitHub URL"
+          aria-expanded={openPopover === "github"}
+          aria-controls="github-popover"
+          onClick={() => togglePopover("github")}
+          className={iconButtonClass}
+        >
+          <Image
+            src="/icons/github.png"
+            alt=""
+            width={20}
+            height={20}
+            className="h-5 w-5 object-contain invert"
+          />
+        </button>
+
+        {openPopover === "github" && (
+          <div id="github-popover" role="status" className={popoverClass}>
+            <span className="text-zinc-500">GitHub: </span>
+            <span>github.com/samjsamson</span>
+          </div>
+        )}
+      </div>
+
+      <div className="relative">
         <button
           type="button"
           aria-label="Show email address"
-          aria-expanded={emailOpen}
+          aria-expanded={openPopover === "email"}
           aria-controls="email-popover"
-          onClick={() => setEmailOpen((open) => !open)}
+          onClick={() => togglePopover("email")}
           className={iconButtonClass}
         >
           <EmailIcon />
         </button>
 
-        {emailOpen && (
-          <div
-            id="email-popover"
-            role="status"
-            className="absolute top-full right-0 z-50 mt-2 whitespace-nowrap rounded-xl border border-white/15 bg-zinc-950/95 px-4 py-3 text-sm text-zinc-200 shadow-2xl shadow-black/40 backdrop-blur-xl"
-          >
+        {openPopover === "email" && (
+          <div id="email-popover" role="status" className={popoverClass}>
             <span className="text-zinc-500">Email: </span>
             <span>{site.email}</span>
           </div>
