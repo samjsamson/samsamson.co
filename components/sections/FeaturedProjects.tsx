@@ -7,13 +7,13 @@ import { projects } from "@/lib/data";
 export function FeaturedProjects() {
   return (
     <section
-      id="projects"
+      id="project-archive"
       className="scroll-mt-24 px-6 py-24 lg:px-8 lg:py-32"
     >
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           label="Projects"
-          title="Featured RevOps / Enablement Projects"
+          title="More RevOps / Enablement Projects"
         />
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
