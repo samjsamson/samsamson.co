@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import { site } from "@/lib/data";
 
 const iconButtonClass =
@@ -32,6 +35,35 @@ function EmailIcon() {
 }
 
 export function SocialButtons({ className = "" }: { className?: string }) {
+  const [emailOpen, setEmailOpen] = useState(false);
+  const emailRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!emailOpen) return;
+
+    const onPointerDown = (event: PointerEvent) => {
+      if (
+        emailRef.current &&
+        event.target instanceof Node &&
+        !emailRef.current.contains(event.target)
+      ) {
+        setEmailOpen(false);
+      }
+    };
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setEmailOpen(false);
+    };
+
+    document.addEventListener("pointerdown", onPointerDown);
+    document.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [emailOpen]);
+
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <a
@@ -58,13 +90,29 @@ export function SocialButtons({ className = "" }: { className?: string }) {
           className="h-5 w-5 object-contain invert"
         />
       </a>
-      <a
-        href={`mailto:${site.email}`}
-        aria-label="Email"
-        className={iconButtonClass}
-      >
-        <EmailIcon />
-      </a>
+      <div ref={emailRef} className="relative">
+        <button
+          type="button"
+          aria-label="Show email address"
+          aria-expanded={emailOpen}
+          aria-controls="email-popover"
+          onClick={() => setEmailOpen((open) => !open)}
+          className={iconButtonClass}
+        >
+          <EmailIcon />
+        </button>
+
+        {emailOpen && (
+          <div
+            id="email-popover"
+            role="status"
+            className="absolute top-full right-0 z-50 mt-2 whitespace-nowrap rounded-xl border border-white/15 bg-zinc-950/95 px-4 py-3 text-sm text-zinc-200 shadow-2xl shadow-black/40 backdrop-blur-xl"
+          >
+            <span className="text-zinc-500">Email: </span>
+            <span>{site.email}</span>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
