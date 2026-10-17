@@ -15,6 +15,7 @@ export const navLinks = [
   { href: "#skills", label: "Skills" },
   { href: "#education", label: "Education" },
   { href: "#contact", label: "Contact" },
+  { href: "/pickleball", label: "Pickleball" },
 ] as const;
 
 export const aboutParagraphs = [

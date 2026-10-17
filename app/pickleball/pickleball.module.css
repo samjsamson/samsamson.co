@@ -1,0 +1,70 @@
+.page{background:#080808;color:#f4f4f5;min-height:100vh;--line:#27272a;--secondary:#a1a1aa;font-family:var(--font-geist-sans),Arial,sans-serif}
+.page *{box-sizing:border-box}
+.page a{text-decoration:none}
+.page a:focus-visible,.page button:focus-visible,.page summary:focus-visible{outline:2px solid #e4e4e7;outline-offset:6px}
+.page main,.header,.footer{max-width:1120px;margin-inline:auto;padding-inline:40px}
+.skip{position:absolute;left:20px;top:-80px;z-index:10;padding:12px;background:#fff;color:#000}
+.skip:focus{top:12px}
+.header{min-height:100px;display:flex;align-items:center;justify-content:space-between;gap:24px;border-bottom:1px solid var(--line)}
+.wordmark{font-size:15px;font-weight:600;letter-spacing:-.4px;color:#f4f4f5}
+.wordmark span{color:var(--secondary);font-weight:400}
+.header nav{display:flex;align-items:center;gap:28px}
+.navLink{color:var(--secondary);font-size:13px}
+.smallButton{display:flex;align-items:center;gap:24px;border:1px solid #3f3f46;border-radius:6px;padding:11px 15px;font-size:12px;color:#f4f4f5;transition:background .2s}
+.smallButton:hover{background:#202020}
+.hero{padding-block:100px 96px;display:grid;grid-template-columns:1.25fr 1fr;gap:55px;align-items:center}
+.eyebrow{color:var(--secondary);font-size:10px;letter-spacing:2px;font-weight:500;margin:0 0 28px}
+.hero h1{font-size:clamp(42px,5.3vw,66px);font-weight:500;line-height:1.08;letter-spacing:-3px;margin:0 0 28px}
+.hero h1 span,.sectionHeading h2 span,.booking h2 span{color:#85858d}
+.intro{max-width:410px;color:#b0b0b8;line-height:1.8;font-size:16px;margin:0 0 32px}
+.primaryButton{display:inline-flex;align-items:center;justify-content:space-between;gap:36px;border:1px solid #e4e4e7;border-radius:6px;background:#e4e4e7;color:#111;padding:15px 20px;font-size:13px;font-weight:600;cursor:pointer;transition:background .2s}
+.primaryButton:hover{background:#fff}
+.heroNote{font-size:11px;color:#92929b;margin-top:16px}
+.courtArt{aspect-ratio:4/4.8;background:#111112;border:1px solid var(--line);border-radius:10px;position:relative;overflow:hidden}
+.courtArt svg{width:100%;height:100%;padding:38px 12px 30px;color:#454549;transform:rotate(-12deg) scale(.9)}
+.artLabel{position:absolute;top:24px;left:24px;color:#a1a1aa;font-size:11px;z-index:1}
+.artFooter{position:absolute;bottom:22px;left:24px;right:24px;display:flex;justify-content:space-between;gap:12px;font-size:8px;letter-spacing:1.4px;color:#a1a1aa}
+.artFooter span{color:#77777f}
+.section{border-top:1px solid var(--line);padding-block:72px 80px;scroll-margin-top:24px}
+.sectionHeading{display:flex;justify-content:space-between;align-items:start;margin-bottom:44px}
+.sectionHeading h2,.about h2,.booking h2{font-size:38px;line-height:1.15;font-weight:500;letter-spacing:-1.5px;margin:0}
+.sectionHeading h2{width:65%}
+.lessonGrid{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.lesson{border-top:1px solid #353538;padding-top:20px}
+.number{font-size:11px;color:#85858d}
+.audience{font-size:10px;color:#a1a1aa;margin:32px 0 12px;letter-spacing:.5px}
+.lesson h3{font-size:20px;letter-spacing:-.6px;font-weight:500;margin:0 0 15px}
+.lesson>p:last-child{font-size:13px;line-height:1.9;color:#a1a1aa;margin:0}
+.about{border-top:1px solid var(--line);padding-block:72px;display:grid;grid-template-columns:1fr 2fr;gap:32px}
+.about h2{margin-bottom:25px}
+.about p:not(.eyebrow){font-size:15px;line-height:1.9;color:#a1a1aa;max-width:590px;margin:0 0 16px}
+.location{margin-top:30px;font-size:12px;color:#d4d4d8}
+.location span{display:block;color:#85858d;margin-top:8px}
+.booking{border-top:1px solid var(--line);padding-block:80px;display:grid;grid-template-columns:1fr 1.2fr;gap:64px;scroll-margin-top:24px}
+.booking h2{margin-bottom:25px}
+.booking>div>p:not(.eyebrow){color:#a1a1aa;font-size:14px;line-height:1.85;max-width:350px}
+.booking>div>p.bookingNote{font-size:11px;color:#92929b;margin-top:25px}
+.form{padding:28px;background:#111112;border:1px solid var(--line);border-radius:10px}
+.formRow{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form label{display:flex;flex-direction:column;gap:9px;font-size:11px;color:#d4d4d8;margin-bottom:20px}
+.form input,.form select,.form textarea{width:100%;min-width:0;border:1px solid #39393d;border-radius:5px;background:#18181a;color:#f4f4f5;padding:12px;font-family:inherit;font-size:12px}
+.form select{color-scheme:dark}
+.form input::placeholder,.form textarea::placeholder{color:#85858d}
+.form textarea{resize:vertical;min-height:100px}
+.form input:focus,.form select:focus,.form textarea:focus{outline:2px solid #a1a1aa;outline-offset:2px}
+.form button{width:100%;font-family:inherit}
+.formNote{font-size:10px;line-height:1.7;color:#a1a1aa;margin:14px 0 0}
+.status{font-size:12px;line-height:1.8;color:#d4d4d8;margin-top:16px;overflow-wrap:anywhere}
+.status a,.form noscript a{color:#fff;text-decoration:underline}
+.faq{border-top:1px solid var(--line);padding-block:56px 80px}
+.faq h2{font-size:22px;font-weight:500;letter-spacing:-.6px;margin:0 0 25px}
+.faq details{border-bottom:1px solid var(--line);padding:19px 0}
+.faq summary{font-size:13px;color:#d4d4d8;cursor:pointer;list-style:revert}
+.faq details p{color:#a1a1aa;line-height:1.8;font-size:13px;max-width:650px;margin:16px 0 2px}
+.footer{border-top:1px solid var(--line);min-height:100px;display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:11px}
+.footer a{color:#d4d4d8}
+.footer p{color:#85858d}
+@media(min-width:1500px){.hero{padding-block:120px}.courtArt{max-height:480px}}
+@media(max-width:760px){.page main,.header,.footer{padding-inline:24px}.header{min-height:80px}.navLink{display:none}.header nav{gap:0}.smallButton{padding:10px;font-size:11px;gap:12px}.wordmark{font-size:13px}.hero{grid-template-columns:1fr;gap:40px;padding-block:60px}.hero h1{font-size:clamp(40px,8vw,60px);letter-spacing:-2px}.courtArt{aspect-ratio:1.3;max-height:360px}.courtArt svg{padding:15px;transform:rotate(-12deg) scale(.9)}.section,.about,.booking{padding-block:50px}.sectionHeading{display:block}.sectionHeading h2{width:100%;font-size:34px}.lessonGrid{grid-template-columns:1fr;gap:30px}.audience{margin-top:18px}.about,.booking{grid-template-columns:1fr;gap:24px}.about .eyebrow{margin-bottom:0}.booking h2{font-size:36px}.booking>div>p:not(.eyebrow){max-width:100%}.form{padding:20px}.footer{flex-wrap:wrap;padding-block:25px;gap:12px}.footer p{order:3;flex-basis:100%;margin:0}.eyebrow{margin-bottom:20px}}
+@media(max-width:380px){.wordmark span{display:block;margin-top:3px}.formRow{grid-template-columns:1fr;gap:0}}
+@media(prefers-reduced-motion:reduce){.page *{scroll-behavior:auto!important;transition:none!important}}
