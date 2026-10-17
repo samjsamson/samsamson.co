@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { BookingRequest } from "./booking-request";
+import Image from "next/image";
+import { BookingSection } from "./booking";
 import styles from "./pickleball.module.css";
 
 const title = "Pickleball Lessons in Danville & San Ramon | Sam Samson";
-const description = "Private and small-group pickleball coaching with Sam Samson for beginners and recreational players in Danville, Alamo, and San Ramon. Request a lesson.";
+const description = "Private and small-group pickleball coaching with Sam Samson for beginners and recreational players in Danville, San Ramon, and the Bay Area. From $40/hour. Book online.";
 
 export const metadata: Metadata = {
   title,
@@ -28,34 +29,23 @@ export default function PickleballPage() {
         <Link href="/" className={styles.wordmark}>Sam Samson<span> / Pickleball</span></Link>
         <nav aria-label="Pickleball navigation">
           <a href="#lessons" className={styles.navLink}>Lessons</a>
-          <a href="#book" className={styles.smallButton}>Request a lesson <span aria-hidden="true">↗</span></a>
+          <a href="#book" className={styles.smallButton}>Book a lesson <span aria-hidden="true">↗</span></a>
         </nav>
       </header>
 
       <main id="main">
         <section className={styles.hero} aria-labelledby="hero-title">
           <div>
-            <p className={styles.eyebrow}>DANVILLE · ALAMO · SAN RAMON</p>
+            <p className={styles.eyebrow}>BASED IN DANVILLE · COACHING ACROSS THE BAY</p>
             <h1 id="hero-title">Less guessing.<br /><span>More good games.</span></h1>
             <p className={styles.intro}>Pickleball lessons with Sam Samson. Simple, practical coaching for beginners and recreational players in the East Bay.</p>
             <a href="#book" className={styles.primaryButton}>Find your next lesson <span aria-hidden="true">↗</span></a>
-            <p className={styles.heroNote}>Private sessions & small groups</p>
+            <p className={styles.heroNote}>From $40 / hour · Private sessions & small groups</p>
           </div>
-          {/* Replace this court illustration with Sam's supplied coaching photo. */}
-          <div className={styles.courtArt} role="img" aria-label="Minimal gray pickleball court illustration">
-            <span className={styles.artLabel}>A little practice goes a long way.</span>
-            <svg viewBox="0 0 400 480" aria-hidden="true" fill="none">
-              <path d="M65 55h270v370H65z" stroke="currentColor" strokeWidth="2" />
-              <path d="M65 178h270M65 302h270M200 55v123M200 302v123" stroke="currentColor" strokeWidth="2" />
-              <path d="M45 240h310" stroke="currentColor" strokeWidth="3" />
-              <path d="M45 246h310M45 252h310" stroke="currentColor" opacity=".35" />
-              <circle cx="269" cy="353" r="12" fill="#d4d4d8" stroke="#090909" strokeWidth="3" />
-              <circle cx="266" cy="350" r="1.5" fill="#52525b" />
-              <circle cx="273" cy="353" r="1.5" fill="#52525b" />
-              <circle cx="267" cy="357" r="1.5" fill="#52525b" />
-            </svg>
-            <span className={styles.artFooter}>PICKLEBALL WITH SAM <span>01 / EAST BAY</span></span>
-          </div>
+          <figure className={styles.heroPhoto}>
+            <Image src="/images/pickleball/sam-tournament.jpg" alt="Sam with fellow pickleball players wearing tournament medals" fill sizes="(max-width: 760px) 100vw, 440px" priority className={styles.photo} />
+            <figcaption>Good games. Great people.</figcaption>
+          </figure>
         </section>
 
         <section id="lessons" className={styles.section} aria-labelledby="lessons-title">
@@ -76,38 +66,53 @@ export default function PickleballPage() {
         </section>
 
         <section className={styles.about} aria-labelledby="about-title">
-          <p className={styles.eyebrow}>YOUR COACH</p>
+          <div className={styles.coachVisual}>
+            <p className={styles.eyebrow}>YOUR COACH</p>
+            <div className={styles.coachPhoto}><Image src="/images/pickleball/sam-medal.jpg" alt="Pickleball players celebrating with medals after a tournament" fill sizes="(max-width: 760px) 100vw, 320px" className={styles.photo} /></div>
+          </div>
           <div>
             <h2 id="about-title">Hey, I’m Sam.</h2>
             <p>I’m a Danville-based pickleball player who loves the game and helping people get comfortable on the court.</p>
             <p>We’ll start with what you want to improve, keep the instruction clear, and spend our time practicing. Whether it’s your first session or you’re finding your rhythm, the goal is to help you enjoy playing more.</p>
-            <div className={styles.location}>Based in Danville <span>Serving the San Ramon Valley</span></div>
+            <div className={styles.location}>Based in Danville <span>Serving the East Bay & beyond</span></div>
           </div>
         </section>
 
-        <section id="book" className={styles.booking} aria-labelledby="booking-title">
-          <div>
-            <p className={styles.eyebrow}>LET’S GET ON COURT</p>
-            <h2 id="booking-title">Your next game<br /><span>starts here.</span></h2>
-            <p>Tell me a little about your game and when you’d like to play. We’ll work out the right session, location, and price together.</p>
-            <p className={styles.bookingNote}>Lessons are arranged individually. Your time and court location are confirmed directly before booking.</p>
+        <section className={styles.gallerySection} aria-labelledby="gallery-title">
+          <div className={styles.galleryHeading}><p className={styles.eyebrow}>LIFE ON COURT</p><h2 id="gallery-title">A few reasons I love this game.</h2></div>
+          <div className={styles.gallery}>
+            {[
+              { src: "outdoor-courts.jpg", alt: "Players enjoying outdoor pickleball beneath a blue sky", label: "One more game." },
+              { src: "paddle.jpg", alt: "Pickleball paddle and bright yellow ball ready for a game", label: "Ready to play." },
+              { src: "court-community.jpg", alt: "Pickleball players and paddles beside an outdoor court", label: "Find your people." },
+              { src: "courtside-dog.jpg", alt: "A golden retriever beside a pickleball court", label: "The courtside company." },
+            ].map((photo) => <figure key={photo.src}><div className={styles.galleryImage}><Image src={`/images/pickleball/${photo.src}`} alt={photo.alt} fill sizes="(max-width: 480px) 80vw, (max-width: 760px) 45vw, 250px" className={styles.photo} /></div><figcaption>{photo.label}</figcaption></figure>)}
           </div>
-          <BookingRequest />
         </section>
+
+        <section className={styles.serviceArea} aria-labelledby="areas-title">
+          <p className={styles.eyebrow}>NEAR YOU</p>
+          <div><h2 id="areas-title">Local lessons. Around the Bay.</h2><p>Based in Danville, with flexible scheduling in:</p>
+            <ul>{["Danville", "Alamo", "San Ramon", "Oakland", "Pleasanton", "Fremont", "Dublin", "San Leandro", "Foster City", "Berkeley", "Hayward"].map((city) => <li key={city}>{city}</li>)}</ul>
+            <p className={styles.areaNote}>Text me your preferred area. We’ll confirm an authorized court location and availability together.</p>
+          </div>
+        </section>
+
+        <BookingSection />
 
         <section className={styles.faq} aria-labelledby="faq-title">
           <h2 id="faq-title">A few quick answers.</h2>
           <details><summary>Do I need experience?</summary><p>No. Beginners are welcome. We can start with scoring, the rules, and the first shots you need to play.</p></details>
-          <details><summary>Where do lessons take place?</summary><p>We’ll agree on an authorized teaching location around Danville, Alamo, or San Ramon before confirming your session. Availability depends on court access.</p></details>
-          <details><summary>Can I bring a friend?</summary><p>Yes. Choose a shared lesson or small group in your request and include how many people would like to join.</p></details>
-          <details><summary>How much does a lesson cost?</summary><p>Pricing is confirmed before booking based on session length, group size, and court costs. Send a request to discuss the options.</p></details>
+          <details><summary>Where do lessons take place?</summary><p>Lessons are available around Danville, Alamo, San Ramon, Oakland, Pleasanton, Fremont, Dublin, San Leandro, Foster City, Berkeley, and Hayward. We’ll confirm an authorized court location and availability for your session.</p></details>
+          <details><summary>Can I bring a friend?</summary><p>Yes. Each additional guest is $20 per hour. For example, a one-hour session for two players is $60 total, and a two-hour session for two players is $110 total. Text me to arrange your group.</p></details>
+          <details><summary>How much does a lesson cost?</summary><p>A private lesson is $40 for one hour or $70 for two hours. Add $20 per hour for each additional guest. Court arrangements and any separate court fees are confirmed before your session.</p></details>
         </section>
       </main>
 
       <footer className={styles.footer}>
         <Link href="/">Sam Samson</Link>
         <p>Pickleball coaching · East Bay, California</p>
-        <a href="mailto:samjsamson@icloud.com">Get in touch <span aria-hidden="true">↗</span></a>
+        <a href="sms:+19257865237">Text Sam · (925) 786-5237 <span aria-hidden="true">↗</span></a>
       </footer>
     </div>
   );
