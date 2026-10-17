@@ -108,3 +108,14 @@
 .srOnly{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media(max-width:760px){.heroPhoto{aspect-ratio:4/4.5;max-height:520px}.coachVisual{display:grid;grid-template-columns:1fr 1fr;align-items:start;gap:24px}.coachPhoto{max-width:none}.gallery{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:24px}.serviceArea{grid-template-columns:1fr;gap:0}.bookingSection{padding-block:50px}.bookingIntro h2{font-size:36px}.priceCard{padding:24px}.guestRow{padding:22px}.contactRow{align-items:start}.contactRow p{margin-top:0}}
 @media(max-width:480px){.priceGrid{grid-template-columns:1fr}.guestRow,.contactRow{flex-direction:column;align-items:start}.coachVisual{grid-template-columns:1fr}.coachPhoto{max-width:280px}.contactRow{gap:8px}.gallery{gap:12px}.gallery figcaption{font-size:10px}.priceCard h3{margin-top:24px}}
+
+/* Prominent contact details in the hero and booking section. */
+.phoneHighlight{display:flex;flex-wrap:wrap;align-items:center;column-gap:28px;row-gap:12px;margin:0 0 32px;padding-block:22px;border-top:1px solid #454549;border-bottom:1px solid #454549}
+.phoneNumber{display:block;color:#fafafa;font-size:clamp(28px,3.4vw,40px);font-weight:600;letter-spacing:-1px;line-height:1.15;white-space:nowrap}
+.phoneInvitation{flex-basis:100%;font-size:clamp(20px,2vw,26px);font-weight:500;line-height:1.4;color:#e4e4e7;margin:0}
+.textLink{color:#d4d4d8;font-size:16px;text-decoration:underline!important;text-underline-offset:4px}
+.bookingSection .phoneHighlight{padding:28px;margin-bottom:28px;background:#151516;border:1px solid #454549;border-radius:8px}
+.bookingSection .phoneNumber{font-size:clamp(30px,4vw,48px)}
+.bookingSection .phoneInvitation{flex:1 1 320px;font-size:clamp(22px,2.5vw,30px)}
+.bookingSection .textLink{flex-basis:100%}
+@media(max-width:480px){.bookingSection .phoneHighlight{padding:22px}.phoneNumber{font-size:30px;letter-spacing:-.8px}.phoneInvitation{font-size:21px}.bookingSection .phoneInvitation{flex-basis:100%;font-size:22px}}

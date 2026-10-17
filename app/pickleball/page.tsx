@@ -4,7 +4,7 @@ import Image from "next/image";
 import { BookingSection } from "./booking";
 import styles from "./pickleball.module.css";
 
-const title = "Pickleball Lessons in Danville & San Ramon | Sam Samson";
+const title = "Bay Area Pickleball Lessons | Sam Samson";
 const description = "Private and small-group pickleball coaching with Sam Samson for beginners and recreational players in Danville, San Ramon, and the Bay Area. From $40/hour. Book online.";
 
 export const metadata: Metadata = {
@@ -37,8 +37,9 @@ export default function PickleballPage() {
         <section className={styles.hero} aria-labelledby="hero-title">
           <div>
             <p className={styles.eyebrow}>BASED IN DANVILLE · COACHING ACROSS THE BAY</p>
-            <h1 id="hero-title">Less guessing.<br /><span>More good games.</span></h1>
-            <p className={styles.intro}>Pickleball lessons with Sam Samson. Simple, practical coaching for beginners and recreational players in the East Bay.</p>
+            <h1 id="hero-title">Bay Area<br />Pickleball Lessons</h1>
+            <p className={styles.intro}>Pickleball lessons with Sam Samson (~4.0 DUPR). Simple, practical coaching for beginners and recreational players in the East Bay.</p>
+            <div className={styles.phoneHighlight}><a href="tel:+19257865237" className={styles.phoneNumber}>(925) 786-5237</a><p className={styles.phoneInvitation}>Feel free to text or call me anytime.</p><a href="sms:+19257865237" className={styles.textLink}>Text me <span aria-hidden="true">↗</span></a></div>
             <a href="#book" className={styles.primaryButton}>Find your next lesson <span aria-hidden="true">↗</span></a>
             <p className={styles.heroNote}>From $40 / hour · Private sessions & small groups</p>
           </div>
