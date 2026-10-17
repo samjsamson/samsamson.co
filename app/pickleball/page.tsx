@@ -44,7 +44,7 @@ export default function PickleballPage() {
             <p className={styles.heroNote}>From $40 / hour · Private sessions & small groups</p>
           </div>
           <figure className={styles.heroPhoto}>
-            <Image src="/images/pickleball/sam-tournament.jpg" alt="Sam with fellow pickleball players wearing tournament medals" fill sizes="(max-width: 760px) 100vw, 440px" priority className={styles.photo} />
+            <Image src="/images/pickleball/sam-medal.jpg" alt="Sam with fellow pickleball players wearing tournament medals" fill sizes="(max-width: 760px) 100vw, 440px" priority className={styles.photo} />
             <figcaption>Good games. Great people.</figcaption>
           </figure>
         </section>
@@ -69,7 +69,7 @@ export default function PickleballPage() {
         <section className={styles.about} aria-labelledby="about-title">
           <div className={styles.coachVisual}>
             <p className={styles.eyebrow}>YOUR COACH</p>
-            <div className={styles.coachPhoto}><Image src="/images/pickleball/sam-medal.jpg" alt="Pickleball players celebrating with medals after a tournament" fill sizes="(max-width: 760px) 100vw, 320px" className={styles.photo} /></div>
+            <div className={styles.coachPhoto}><Image src="/images/pickleball/sam-tournament.jpg" alt="Pickleball players celebrating with medals after a tournament" fill sizes="(max-width: 760px) 100vw, 320px" className={styles.photo} /></div>
           </div>
           <div>
             <h2 id="about-title">Hey, I’m Sam.</h2>
