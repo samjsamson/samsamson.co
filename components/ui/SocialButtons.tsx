@@ -83,8 +83,7 @@ export function SocialButtons({ className = "" }: { className?: string }) {
       >
         <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7" aria-hidden="true">
           <g transform="rotate(-32 12 12)">
-            <path d="M7.3 1.8h9.4c2 0 3.3 1.5 3.3 3.5v7.1c0 2.2-1.4 3.7-3.5 4.1l-2.7.5v5.2h-3.6V17l-2.7-.5C5.4 16.1 4 14.6 4 12.4V5.3c0-2 1.3-3.5 3.3-3.5Z" fill="currentColor"/>
-            <path d="M10.2 18.5h3.6M10.2 20h3.6" stroke="black" strokeWidth=".65" opacity=".5"/>
+            <path d="M8.4 1.4C5.8 1.4 4.5 3.4 4.5 5.9v6.2c0 2.4 1.4 4 3.7 4.4l1.9.3v5.7h3.8v-5.7l1.9-.3c2.3-.4 3.7-2 3.7-4.4V5.9c0-2.5-1.3-4.5-3.9-4.5H8.4Z" stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round"/>
           </g>
         </svg>
       </a>
