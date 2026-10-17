@@ -75,6 +75,25 @@ export function SocialButtons({ className = "" }: { className?: string }) {
 
   return (
     <div ref={groupRef} className={`flex items-center gap-3 ${className}`}>
+      <a
+        href="/pickleball"
+        aria-label="Pickleball coaching"
+        title="Pickleball coaching"
+        className={iconButtonClass}
+      >
+        <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
+          <g transform="rotate(-35 12 12)" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="5" y="2" width="14" height="14" rx="7" />
+            <path d="M12 16v6" strokeWidth="2.8" />
+            <circle cx="9" cy="7" r=".75" fill="currentColor" stroke="none" />
+            <circle cx="13" cy="6" r=".75" fill="currentColor" stroke="none" />
+            <circle cx="16" cy="9" r=".75" fill="currentColor" stroke="none" />
+            <circle cx="10" cy="12" r=".75" fill="currentColor" stroke="none" />
+            <circle cx="14" cy="12" r=".75" fill="currentColor" stroke="none" />
+          </g>
+        </svg>
+      </a>
+
       <div className="relative">
         <button
           type="button"
