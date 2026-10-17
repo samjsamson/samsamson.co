@@ -81,15 +81,10 @@ export function SocialButtons({ className = "" }: { className?: string }) {
         title="Pickleball coaching"
         className={iconButtonClass}
       >
-        <svg viewBox="0 0 24 24" fill="none" className="h-6 w-6" aria-hidden="true">
-          <g transform="rotate(-35 12 12)" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round">
-            <rect x="5" y="2" width="14" height="14" rx="7" />
-            <path d="M12 16v6" strokeWidth="2.8" />
-            <circle cx="9" cy="7" r=".75" fill="currentColor" stroke="none" />
-            <circle cx="13" cy="6" r=".75" fill="currentColor" stroke="none" />
-            <circle cx="16" cy="9" r=".75" fill="currentColor" stroke="none" />
-            <circle cx="10" cy="12" r=".75" fill="currentColor" stroke="none" />
-            <circle cx="14" cy="12" r=".75" fill="currentColor" stroke="none" />
+        <svg viewBox="0 0 24 24" fill="none" className="h-7 w-7" aria-hidden="true">
+          <g transform="rotate(-32 12 12)">
+            <path d="M7.3 1.8h9.4c2 0 3.3 1.5 3.3 3.5v7.1c0 2.2-1.4 3.7-3.5 4.1l-2.7.5v5.2h-3.6V17l-2.7-.5C5.4 16.1 4 14.6 4 12.4V5.3c0-2 1.3-3.5 3.3-3.5Z" fill="currentColor"/>
+            <path d="M10.2 18.5h3.6M10.2 20h3.6" stroke="black" strokeWidth=".65" opacity=".5"/>
           </g>
         </svg>
       </a>
