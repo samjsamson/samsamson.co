@@ -22,7 +22,7 @@ export function Header() {
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className="fixed top-0 right-0 left-0 z-50 border-b border-white/[0.08] bg-black/90 py-3 backdrop-blur-xl"
     >
-      <div className="relative mx-auto flex max-w-6xl items-center justify-end px-6 lg:justify-center lg:px-8">
+      <div className="relative mx-auto flex max-w-6xl items-center justify-end px-6 lg:justify-between lg:gap-8 lg:px-8">
         <button
           type="button"
           aria-expanded={menuOpen}
@@ -55,7 +55,7 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center lg:absolute lg:right-8">
+        <div className="flex shrink-0 items-center">
           <SocialButtons />
         </div>
       </div>
